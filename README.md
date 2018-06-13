@@ -1,6 +1,22 @@
 # light-expr
 解析表达式抽象语法树
 
+解析表达式
+
+'''java
+
+// 解析器
+Parser parser = new Parser("x = a + b + c*d + sin(e) + max(e,f)");
+
+// 解析
+BaseExpression parse = parser.parse();
+
+// 打印
+System.out.println(parse);
+
+'''
+
+
 # light-expr
 解析表达式抽象语法树
 <pre>

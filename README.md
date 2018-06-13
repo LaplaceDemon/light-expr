@@ -29,14 +29,15 @@ System.out.println(be);
  /               \
 x                 +
            /             \
-         +               max()
+         +               max( )
       /     \                |
-     +     sin()            e,f
+     +     sin( )           e,f
    /   \       |
   +     *      e
  / \   / \
 a   b c   d
 ```
+
 
 ## 更多用例：
 

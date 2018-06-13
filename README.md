@@ -3,7 +3,7 @@
 
 解析表达式
 
-'''java
+```java
 
 // 解析器
 Parser parser = new Parser("x = a + b + c*d + sin(e) + max(e,f)");
@@ -14,7 +14,7 @@ BaseExpression parse = parser.parse();
 // 打印
 System.out.println(parse);
 
-'''
+```
 
 
 # light-expr

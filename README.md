@@ -3,7 +3,7 @@
 
 # light-expr
 解析表达式抽象语法树
-
+<pre>
 x = 1 + 2 ==>  = [ x , + < 1 , 2 > ]
 x = 1 - 2 ==>  = [ x , - < 1 , 2 > ]
 x = 1 * 2 ==>  = [ x , * < 1 , 2 > ]
@@ -59,3 +59,4 @@ min(a+b,c,d+e) ==> min < [+ < a , b >, c, + < d , e >] >
 min(a+b,c,sin(d+e)) ==> min < [+ < a , b >, c, sin < + < d , e > >] >
 cos(a+b),c,sin(d+e) ==> [cos < + < a , b > >, c, sin < + < d , e > >]
 cos(a+b),obj.f1,sin(d+e) ==> [cos < + < a , b > >, [obj, f1], sin < + < d , e > >]
+</pre>

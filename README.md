@@ -28,14 +28,14 @@ System.out.println(be);
        =
  /              \
 x                +
-          /             \
-        +               max()
-     /     \                |
-    +     sin()            e,f
-   /  \       |
- +     *      e
-/ \   / \
-a b   c d
+           /             \
+         +               max()
+      /     \                |
+     +     sin()            e,f
+   /   \       |
+  +     *      e
+ / \   / \
+a   b c   d
 ```
 
 ## 更多用例：

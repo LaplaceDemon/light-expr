@@ -4,16 +4,23 @@
 解析表达式
 
 ```java
+// 表达式
+String expression = "x = a + b + c*d + sin(e) + max(e,f)";
 
-// 解析器
-Parser parser = new Parser("x = a + b + c*d + sin(e) + max(e,f)");
+// 构建解析器
+Parser parser = new Parser(expression);
 
-// 解析
-BaseExpression parse = parser.parse();
+// 开始解析，得到结果
+BaseExpression be = parser.parse();
 
 // 打印
-System.out.println(parse);
+System.out.println(be);
 
+```
+
+打印结果：
+```
+ = [ x , + < + < + < + < a , b > , * < c , d > > , sin < e > > , max < [e, f] > > ]
 ```
 
 

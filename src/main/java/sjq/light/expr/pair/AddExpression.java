@@ -4,6 +4,8 @@ import sjq.light.expr.AssignmentStatement;
 import sjq.light.expr.BaseExpression;
 import sjq.light.expr.ItemExpression;
 import sjq.light.expr.parse.ParseExpressionException;
+import sjq.light.expr.util.CalcUtil;
+import sjq.light.expr.util.IncomputableException;
 
 public class AddExpression extends PairExpression {
 
@@ -58,5 +60,10 @@ public class AddExpression extends PairExpression {
     @Override
     public String toString() {
         return "+ < " + left + " , " + right + " >";
+    }
+
+    @Override
+    public Object eval() throws IncomputableException {
+        return CalcUtil.add(this.left.eval(), this.right.eval());
     }
 }

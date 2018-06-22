@@ -1,10 +1,11 @@
 package sjq.light.expr;
 
 import sjq.light.expr.parse.ParseExpressionException;
+import sjq.light.expr.util.IncomputableException;
 
-public class BaseExpression {
+public abstract class BaseExpression {
     
-    public BaseExpression join(BaseExpression baseExpression) throws ParseExpressionException {
-        return new BaseExpression();
-    }
+    public abstract BaseExpression join(BaseExpression baseExpression) throws ParseExpressionException;
+    
+    public abstract Object eval() throws IncomputableException;
 }

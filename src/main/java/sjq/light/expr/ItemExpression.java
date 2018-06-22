@@ -2,8 +2,9 @@ package sjq.light.expr;
 
 import sjq.light.expr.pair.PairExpression;
 import sjq.light.expr.parse.ParseExpressionException;
+import sjq.light.expr.util.IncomputableException;
 
-public class ItemExpression extends BaseExpression {
+public abstract class ItemExpression extends BaseExpression {
     
     @Override
     public BaseExpression join(BaseExpression baseExpression) throws ParseExpressionException {
@@ -19,5 +20,7 @@ public class ItemExpression extends BaseExpression {
             throw new ParseExpressionException();
         }
     }
+
+    public abstract Object eval() throws IncomputableException;
 
 }

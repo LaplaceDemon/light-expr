@@ -7,7 +7,7 @@ public class StringExpressionBuilder extends ExpressionBuilder {
     private boolean closed;
 
     public StringExpressionBuilder(char c) {
-        super(c);
+        super();
         if(c == '\'') {
             single = true;
         } else if (c == '"') {
@@ -23,18 +23,20 @@ public class StringExpressionBuilder extends ExpressionBuilder {
             return false;
         }
         
-        super.append(ch);
-        
         if(single) {
             if(ch == '\'') {
                 closed = true;
+                return true;
             }
+            
         } else {
             if(ch == '"') {
                 closed = true;
+                return true;
             }
-        }
+        } 
         
+        super.append(ch);
         return true;
     }
     

@@ -1,6 +1,7 @@
 package sjq.light.expr;
 
 import sjq.light.expr.parse.ParseExpressionException;
+import sjq.light.expr.util.IncomputableException;
 
 public class AssignmentStatement extends BaseExpression {
     protected BaseExpression left;
@@ -49,6 +50,11 @@ public class AssignmentStatement extends BaseExpression {
     @Override
     public String toString() {
         return " = [ " + left + " , " + right + " ]";
+    }
+
+    @Override
+    public Object eval() throws IncomputableException {
+        return this.right.eval();
     }
     
 }

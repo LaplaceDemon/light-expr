@@ -2,8 +2,9 @@ package sjq.light.expr.pair;
 
 import sjq.light.expr.BaseExpression;
 import sjq.light.expr.parse.ParseExpressionException;
+import sjq.light.expr.util.IncomputableException;
 
-public class PairExpression extends BaseExpression {
+public abstract class PairExpression extends BaseExpression {
     protected BaseExpression left;
     protected BaseExpression right;
 
@@ -41,5 +42,7 @@ public class PairExpression extends BaseExpression {
     public String toString() {
         return "[ " + left + " , " + right + " ]";
     }
+
+    public abstract Object eval() throws IncomputableException;
 
 }

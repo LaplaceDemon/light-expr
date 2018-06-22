@@ -2,7 +2,7 @@ package sjq.light.expr;
 
 import sjq.light.expr.parse.ParseExpressionException;
 
-public class ExpressionBuilder {
+public abstract class ExpressionBuilder {
     private StringBuilder sb = new StringBuilder();
     
     public ExpressionBuilder() {
@@ -21,7 +21,5 @@ public class ExpressionBuilder {
         return this.sb.toString();
     }
     
-    public BaseExpression build() throws ParseExpressionException {
-        return new BaseExpression();
-    }
+    public abstract BaseExpression build() throws ParseExpressionException;
 }

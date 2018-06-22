@@ -9,6 +9,7 @@ import sjq.light.expr.function.MinExpression;
 import sjq.light.expr.function.SinExpression;
 import sjq.light.expr.function.SumExpression;
 import sjq.light.expr.parse.ParseExpressionException;
+import sjq.light.expr.util.IncomputableException;
 
 public class SymbolExpression extends ItemExpression {
     private String value;
@@ -48,6 +49,11 @@ public class SymbolExpression extends ItemExpression {
     @Override
     public String toString() {
         return value;
+    }
+
+    @Override
+    public Object eval() throws IncomputableException {
+        throw new IncomputableException();
     }
 
 }

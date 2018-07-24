@@ -4,8 +4,6 @@
 	<groupId>sjq.light.expr</groupId>
 	<artifactId>light-expr</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	
 	<build>
 		<plugins>
 			<plugin>

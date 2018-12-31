@@ -3,7 +3,6 @@ package sjq.light.expr.parse;
 import java.util.LinkedList;
 import java.util.List;
 
-import sjq.light.expr.AssignmentExpressionBuilder;
 import sjq.light.expr.BaseExpression;
 import sjq.light.expr.ExpressionBuilder;
 import sjq.light.expr.atomic.NumberExpressionBuilder;
@@ -11,6 +10,7 @@ import sjq.light.expr.atomic.PriorityExpressionBuilder;
 import sjq.light.expr.atomic.StringExpressionBuilder;
 import sjq.light.expr.atomic.SymbolExpressionBuilder;
 import sjq.light.expr.atomic.TupleExpression;
+import sjq.light.expr.equation.EquationExpressionBuilder;
 import sjq.light.expr.pair.AddExpressionBuilder;
 import sjq.light.expr.pair.DivExpressionBuilder;
 import sjq.light.expr.pair.MulExpressionBuilder;
@@ -48,8 +48,6 @@ public class Parser {
                     append = createExpressionBuilderByFirstChar(ch);
                 }
 
-//                System.out.println(append);
-
                 if (!append) {
                     if (curExpressionBuilder != null) {
                         BaseExpression newExpression = curExpressionBuilder.build();
@@ -70,9 +68,9 @@ public class Parser {
                 }
             }
         }
-
+        
         // 最后处理
-        {
+        if(curExpressionBuilder != null) {
             BaseExpression newExpression = curExpressionBuilder.build();
             curExpressionBuilder = null;
             if (lastExpression != null) {
@@ -95,8 +93,8 @@ public class Parser {
             this.curExpressionBuilder = new SymbolExpressionBuilder(ch);
         } else if ('0' <= ch && ch <= '9') {
             this.curExpressionBuilder = new NumberExpressionBuilder(ch);
-        } else if (ch == '=') {
-            curExpressionBuilder = new AssignmentExpressionBuilder(ch);
+        } else if (ch == '=' || ch == '>' || ch == '<' || ch == '!') {
+            curExpressionBuilder = new EquationExpressionBuilder(ch);
         } else if (ch == '+') {
             curExpressionBuilder = new AddExpressionBuilder(ch);
         } else if (ch == '-') {
@@ -112,8 +110,10 @@ public class Parser {
         } else if(ch == ',') {
             this.expressionList.add(this.lastExpression);
             this.lastExpression = null;
+        } else {
+        	System.out.println("???");
         }
-
+        
         return true;
     }
 

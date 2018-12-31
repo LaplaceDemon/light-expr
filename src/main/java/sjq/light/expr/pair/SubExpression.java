@@ -1,8 +1,9 @@
 package sjq.light.expr.pair;
 
-import sjq.light.expr.AssignmentStatement;
 import sjq.light.expr.BaseExpression;
 import sjq.light.expr.ItemExpression;
+import sjq.light.expr.equation.AssignmentStatement;
+import sjq.light.expr.equation.EquationStatement;
 import sjq.light.expr.parse.ParseExpressionException;
 import sjq.light.expr.util.CalcUtil;
 import sjq.light.expr.util.IncomputableException;
@@ -48,10 +49,10 @@ public class SubExpression extends PairExpression {
             pairExpression.setLeft(rightExpression);
             this.setRight(pairExpression);
             return this;
-        } else if (baseExpression instanceof AssignmentStatement) {
-            AssignmentStatement assignmentStatement = (AssignmentStatement)baseExpression;
-            assignmentStatement.setLeft(this);
-            return assignmentStatement;
+        } else if (baseExpression instanceof EquationStatement) {
+        	EquationStatement equationStatement = (EquationStatement)baseExpression;
+        	equationStatement.setLeft(this);
+            return equationStatement;
         } else {
             throw new ParseExpressionException();
         }

@@ -14,7 +14,9 @@ import sjq.light.expr.util.IncomputableException;
 public class SymbolExpression extends ItemExpression {
     private String value;
     
-    SymbolExpression(String value) {
+    public SymbolExpression() {}
+    
+    public SymbolExpression(String value) {
         this.value = value;
     }
 
@@ -39,7 +41,7 @@ public class SymbolExpression extends ItemExpression {
             } else if(this.value.equals("min") || this.value.equals("Min") || this.value.equals("MIN")) {
                 return new MinExpression(priorityExpression);
             } else {
-                throw new ParseExpressionException();
+                throw new ParseExpressionException(this.value  + " functions are not supported");
             }
         } else {
             return super.join(baseExpression);

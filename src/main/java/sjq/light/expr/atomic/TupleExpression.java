@@ -29,4 +29,13 @@ public class TupleExpression extends ItemExpression {
         
         return results;
     }
+
+    public int countExpressionList() {
+		return expressionList.size();
+	}
+    
+	public List<BaseExpression> getExpressionList() {
+		return expressionList;
+	}
+    
 }

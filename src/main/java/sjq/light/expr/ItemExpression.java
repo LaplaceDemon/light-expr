@@ -50,6 +50,11 @@ public abstract class ItemExpression extends BaseExpression {
 				asStatement.setLeft(this);
 				
 				return asStatement;
+    		} else {
+    			CommonStatement commonState = new CommonStatement();
+    			commonState.join(this);
+    			commonState.join(baseExpression);
+    			return commonState;
     		}
     	}
         

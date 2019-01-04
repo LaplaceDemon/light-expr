@@ -20,4 +20,9 @@ public class PriorityExpression extends ItemExpression {
     public Object eval() throws IncomputableException {
         return baseExpression.eval();
     }
+
+	public BaseExpression getBaseExpression() {
+		return baseExpression;
+	}
+    
 }

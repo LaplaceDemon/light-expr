@@ -8,4 +8,5 @@ public abstract class BaseExpression {
     public abstract BaseExpression join(BaseExpression baseExpression) throws ParseExpressionException;
     
     public abstract Object eval() throws IncomputableException;
+
 }

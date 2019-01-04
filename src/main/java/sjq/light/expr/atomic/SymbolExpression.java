@@ -4,6 +4,7 @@ import sjq.light.expr.BaseExpression;
 import sjq.light.expr.ItemExpression;
 import sjq.light.expr.function.CosExpression;
 import sjq.light.expr.function.CountExpression;
+import sjq.light.expr.function.FuncExpression;
 import sjq.light.expr.function.MaxExpression;
 import sjq.light.expr.function.MinExpression;
 import sjq.light.expr.function.SinExpression;
@@ -41,7 +42,8 @@ public class SymbolExpression extends ItemExpression {
             } else if(this.value.equals("min") || this.value.equals("Min") || this.value.equals("MIN")) {
                 return new MinExpression(priorityExpression);
             } else {
-                throw new ParseExpressionException(this.value  + " functions are not supported");
+//                throw new ParseExpressionException(this.value  + " functions are not supported");
+            	return new FuncExpression(this.value, priorityExpression);
             }
         } else {
             return super.join(baseExpression);

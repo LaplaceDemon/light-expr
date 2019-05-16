@@ -6,9 +6,9 @@ public class AttributeExpression extends SymbolExpression {
 
     private List<String> symbolList;
     
-    private AttributeExpression(String value) {
-        super(value);
-    }
+//    private AttributeExpression(String value) {
+//        super(value);
+//    }
     
     AttributeExpression(List<String> symbolList) {
         super("");

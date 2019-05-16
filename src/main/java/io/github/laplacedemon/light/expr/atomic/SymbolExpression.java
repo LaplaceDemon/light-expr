@@ -2,13 +2,7 @@ package io.github.laplacedemon.light.expr.atomic;
 
 import io.github.laplacedemon.light.expr.BaseExpression;
 import io.github.laplacedemon.light.expr.ItemExpression;
-import io.github.laplacedemon.light.expr.function.CosExpression;
-import io.github.laplacedemon.light.expr.function.CountExpression;
 import io.github.laplacedemon.light.expr.function.FuncExpression;
-import io.github.laplacedemon.light.expr.function.MaxExpression;
-import io.github.laplacedemon.light.expr.function.MinExpression;
-import io.github.laplacedemon.light.expr.function.SinExpression;
-import io.github.laplacedemon.light.expr.function.SumExpression;
 import io.github.laplacedemon.light.expr.parse.ParseExpressionException;
 import io.github.laplacedemon.light.expr.util.IncomputableException;
 

@@ -2,7 +2,6 @@ package io.github.laplacedemon.light.expr.pair;
 
 import io.github.laplacedemon.light.expr.BaseExpression;
 import io.github.laplacedemon.light.expr.ItemExpression;
-import io.github.laplacedemon.light.expr.equation.AssignmentStatement;
 import io.github.laplacedemon.light.expr.equation.EquationStatement;
 import io.github.laplacedemon.light.expr.parse.ParseExpressionException;
 import io.github.laplacedemon.light.expr.util.CalcUtil;

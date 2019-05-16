@@ -1,7 +1,9 @@
 package sjq.light.expr.parse;
 
-import sjq.light.expr.BaseExpression;
-import sjq.light.expr.util.IncomputableException;
+import io.github.laplacedemon.light.expr.BaseExpression;
+import io.github.laplacedemon.light.expr.parse.ParseExpressionException;
+import io.github.laplacedemon.light.expr.parse.Parser;
+import io.github.laplacedemon.light.expr.util.IncomputableException;
 
 public class TestAssignmentParser {
     public static void main(String[] args) throws ParseExpressionException, IncomputableException {

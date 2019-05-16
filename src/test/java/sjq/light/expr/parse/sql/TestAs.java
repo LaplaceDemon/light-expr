@@ -1,8 +1,8 @@
 package sjq.light.expr.parse.sql;
 
-import sjq.light.expr.BaseExpression;
-import sjq.light.expr.parse.ParseExpressionException;
-import sjq.light.expr.parse.Parser;
+import io.github.laplacedemon.light.expr.BaseExpression;
+import io.github.laplacedemon.light.expr.parse.ParseExpressionException;
+import io.github.laplacedemon.light.expr.parse.Parser;
 
 public class TestAs {
 	public static void main(String[] args) throws ParseExpressionException {

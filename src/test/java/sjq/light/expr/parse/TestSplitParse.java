@@ -1,6 +1,8 @@
 package sjq.light.expr.parse;
 
-import sjq.light.expr.BaseExpression;
+import io.github.laplacedemon.light.expr.BaseExpression;
+import io.github.laplacedemon.light.expr.parse.ParseExpressionException;
+import io.github.laplacedemon.light.expr.parse.Parser;
 
 public class TestSplitParse {
     public static void main(String[] args) throws ParseExpressionException {

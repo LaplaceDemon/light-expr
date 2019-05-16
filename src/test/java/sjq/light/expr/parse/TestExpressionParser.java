@@ -11,7 +11,7 @@ public class TestExpressionParser {
             BaseExpression parse = parser.parse();
             System.out.println(parser.getExpression() + " ==> " + parse);
             assert parse.toString().equals("a");
-        }                                                                                                                                                                                                                              
+        }                                                                                                                                                                                                                 
         
         {
             Parser parser = new Parser("obj.x");
@@ -81,6 +81,55 @@ public class TestExpressionParser {
             BaseExpression parse = parser.parse();
             System.out.println(parser.getExpression() + " ==> " + parse);
             assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("a + b");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("a + b * c");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("(a + b) * c");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("ha(a + b)");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("ha(a , b)");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("max(a + b)");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
+        }
+        
+        {
+            Parser parser = new Parser("max(a , b)");
+            BaseExpression parse = parser.parse();
+            System.out.println(parser.getExpression() + " ==> " + parse);
+//            assert parse.toString().equals("[cos < + < a , b > >, [obj, f1], sin < + < d , e > >]");
         }
         
     }

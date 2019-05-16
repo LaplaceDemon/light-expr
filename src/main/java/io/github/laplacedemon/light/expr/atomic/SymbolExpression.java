@@ -29,6 +29,7 @@ public class SymbolExpression extends ItemExpression {
     public BaseExpression join(BaseExpression baseExpression) throws ParseExpressionException {
         if(baseExpression instanceof PriorityExpression) {
             PriorityExpression priorityExpression = (PriorityExpression)baseExpression;
+            /*
             if(this.value.equals("sin")  || this.value.equals("Sin") || this.value.equals("SIN")) {
                 return new SinExpression(priorityExpression);
             } else if(this.value.equals("cos") || this.value.equals("Cos") || this.value.equals("COS")) {
@@ -45,6 +46,8 @@ public class SymbolExpression extends ItemExpression {
 //                throw new ParseExpressionException(this.value  + " functions are not supported");
             	return new FuncExpression(this.value, priorityExpression);
             }
+            */
+            return new FuncExpression(this.value, priorityExpression);
         } else {
             return super.join(baseExpression);
         }

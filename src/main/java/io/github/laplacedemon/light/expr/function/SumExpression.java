@@ -4,6 +4,7 @@ import io.github.laplacedemon.light.expr.ItemExpression;
 import io.github.laplacedemon.light.expr.atomic.PriorityExpression;
 import io.github.laplacedemon.light.expr.util.IncomputableException;
 
+@Deprecated
 public class SumExpression extends ItemExpression {
     private PriorityExpression priorityExpression;
     

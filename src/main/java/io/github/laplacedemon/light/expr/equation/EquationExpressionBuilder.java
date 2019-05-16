@@ -4,7 +4,6 @@ import io.github.laplacedemon.light.expr.BaseExpression;
 import io.github.laplacedemon.light.expr.ExpressionBuilder;
 
 /**
- * 方程表达式构建器（包括 =  ==  !=  >  >=  <  <=）
  * @author jackie.sjq
  *
  */

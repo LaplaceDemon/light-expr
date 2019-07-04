@@ -1,6 +1,16 @@
 # light-expr
 解析表达式抽象语法树
 
+Maven：
+```xml
+<dependency>
+    <groupId>io.github.laplacedemon</groupId>
+    <artifactId>light-expr</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
+
 解析表达式
 
 ```java
